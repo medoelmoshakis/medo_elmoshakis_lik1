@@ -5,40 +5,40 @@ from user_agent import generate_user_agent
 from time import sleep
 
 # --- إعدادات الصفحة والتصميم ---
-st.set_page_config(page_title="علــش | @GX1GX1", page_icon="⚔️", layout="centered")
+st.set_page_config(page_title="MEDOELMOSHAKIS", page_icon="⚔️", layout="centered")
 
 st.markdown("""
     <style>
     .stApp { background: #0e1117; color: white; }
     
     @keyframes pulse-gold {
-        0% { transform: scale(1); box-shadow: 0 0 5px #FFD700; }
-        50% { transform: scale(1.05); box-shadow: 0 0 20px #FFD700; }
-        100% { transform: scale(1); box-shadow: 0 0 5px #FFD700; }
+        0% { transform: scale(1); box-shadow: 0 0 5px #000080; }
+        50% { transform: scale(1.05); box-shadow: 0 0 20px #000080; }
+        100% { transform: scale(1); box-shadow: 0 0 5px #000080; }
     }
     .user-avatar {
-        display: block; margin: auto; border: 4px solid #FFD700;
+        display: block; margin: auto; border: 4px solid #000080;
         border-radius: 50%; animation: pulse-gold 2s infinite;
         margin-bottom: 20px;
     }
 
     .stButton>button {
         width: 100%; border-radius: 12px; 
-        background: linear-gradient(45deg, #FFD700, #DAA520);
+        background: linear-gradient(45deg, #000080, #DAA520);
         color: black; font-weight: bold; border: none; height: 3.5em;
         transition: 0.3s; margin-top: 10px;
     }
     .stButton>button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,215,0,0.4); }
 
     .stSelectbox div[data-baseweb="select"] { background-color: #1a1a1a; border: 1px solid #DAA520; }
-    .stTextInput>div>div>input { background-color: #1a1a1a; color: #FFD700; border: 1px solid #DAA520; text-align: center; }
+    .stTextInput>div>div>input { background-color: #1a1a1a; color: #000080; border: 1px solid #DAA520; text-align: center; }
     </style>
     """, unsafe_allow_html=True)
 
 # --- عرض الصورة الشخصية ---
-st.markdown(f'<img src="https://i.ibb.co/cXgRkRTf/6e37bd54624a0d987f097ff5bb04a58e.jpg" class="user-avatar" width="160">', unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center; color: #FFD700;'>علـــش | GX1GX1</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #888;'> رشق الخدمات الاجتماعية المتكاملة</p>", unsafe_allow_html=True)
+st.markdown(f'<img src="https://i.ibb.co/N2K7d8NC/1764126655531-019abe24-4f85-7dfd-85c9-2c3f2695ef50-1.jpg" class="user-avatar" width="160">', unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #000080;'>MEDOELMOSHAKIS</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #888;'> ميدو المشاگس بيمسي عليكگ </p>", unsafe_allow_html=True)
 st.write("---")
 
 # --- دالة لتوليد IP عشوائي ---
@@ -72,7 +72,7 @@ def send_request(url, link, quantity=None):
         
         r = requests.post(url, headers=headers, data=data)
         if "Please wait" in r.text or '"error":' in r.text:
-            st.error("⚠️ الموقع يطلب الانتظار. جرب لاحقاً أو غير الرابط.")
+            st.error("⚠️ استنا دقيقه وجرب تاني. او جرب تغير الرابط.")
         else:
             st.success(f"✅ تم الإرسال بنجاح بـ IP وهمي: {random_ip}")
     except Exception as e:
@@ -80,25 +80,25 @@ def send_request(url, link, quantity=None):
 
 # --- واجهة الاختيار ---
 option = st.selectbox(
-    "اختر الخدمة المطلوبة:",
-    ["إعجابات يوتيوب", "إعجابات تيك توك", "حفظ منشور إنستغرام", "مشاهدات تيك توك"]
+    "شوف هتزود اي يمشهور:",
+    ["لايكات يوتيوب", "لايكات تيك توك", "حفظ منشور إنستغرام", "مشاهدات تيك توك"]
 )
 
-video_url = st.text_input("ضع الرابط هنا 👇", placeholder="https://...")
+video_url = st.text_input("حط الرابط هنا 👇", placeholder="https://...")
 
-if st.button("بدأ"):
+if st.button("بدء"):
     if video_url:
         with st.spinner('جاري معالجة الطلب...'):
-            if option == "إعجابات يوتيوب":
+            if option == "لايكات يوتيوب":
                 send_request("https://leofame.com/free-youtube-likes?api=1", video_url)
-            elif option == "إعجابات تيك توك":
+            elif option == "لايكات تيك توك":
                 send_request("https://leofame.com/free-tiktok-likes?api=1", video_url)
             elif option == "حفظ منشور إنستغرام":
                 send_request("https://leofame.com/free-instagram-saves?api=1", video_url, "30")
             elif option == "مشاهدات تيك توك":
                 send_request("https://leofame.com/ar/free-tiktok-views?api=1", video_url, "200")
     else:
-        st.warning("يرجى إدخال الرابط أولاً!")
+        st.warning("صلي علي النبي وحط الرابط!")
 
 st.write("---")
-st.markdown("<p style='text-align: center; font-size: 12px; color: #555;'>تم التطوير بواسطة علش @GX1GX1</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 12px; color: #555;'>۾ـيـدو الـمـشـاگـس دا مـ أسـم دا گـيـأن 🔄</p>", unsafe_allow_html=True)
